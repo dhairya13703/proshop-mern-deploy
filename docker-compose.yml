@@ -1,0 +1,47 @@
+version: "3"
+services: 
+  frontend:
+    image: react-app
+    stdin_open: true
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    depends_on: 
+      - backend
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+  backend:
+    image: node-new-app
+    volumes:
+      - ./server/:/usr/src/app/
+      - /usr/src/app/node_modules
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/proshop
+      - JWT_SECRET='abc123'
+    networks:
+      - app-network
+  mongo:
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+      driver: bridge
+
+volumes:
+  data-volume:
+  node_modules:
+  web-root:
+    driver: local
