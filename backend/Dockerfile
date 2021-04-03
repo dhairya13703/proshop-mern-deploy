@@ -3,12 +3,11 @@ FROM node:15-slim
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# Install Dependencies
 COPY ./package*.json ./
 
 RUN npm install 
+RUN npm run data:import
 
-# Copy app source code
 COPY . .
 
 # Exports
