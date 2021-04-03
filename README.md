@@ -46,21 +46,20 @@ PAYPAL_CLIENT_ID = your paypal client id
 
 ##Instalation
 
-###(Easy Method)
+(Easy Method)
 ### I have made this project installation simple
-####Just install docker in your machine and you are googd to go.(If you are using windows I suggest you should use wsl2)
+Just install docker in your machine and you are googd to go.(If you are using windows I suggest you should use wsl2)
 
 ```
 sudo apt-get install make
 docker-compose up
-
 ```
 
 With this two commands your Project will be installed on your machine and it will start
 
 
 
-###(Hard Method)
+(Hard Method)
 ### Install Dependencies (frontend & backend)
 
 ```
@@ -72,11 +71,11 @@ npm install
 ### Run
 
 ```
-# Run frontend (:3000) & backend (:5000)
-npm run dev
+# Run frontend (:3000) 
+cd frontend && npm start
 
 # Run backend only
-npm run server
+cd backend && npm start
 ```
 
 ### Deploy
