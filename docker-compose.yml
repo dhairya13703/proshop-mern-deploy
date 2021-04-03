@@ -4,7 +4,7 @@ services:
     image: react-app
     stdin_open: true
     volumes:
-      - ./client/:/usr/app
+      - ./frontend/:/usr/app
       - /usr/app/node_modules
     depends_on: 
       - backend
@@ -15,16 +15,17 @@ services:
   backend:
     image: node-new-app
     volumes:
-      - ./server/:/usr/src/app/
+      - ./backend/:/usr/src/app/
       - /usr/src/app/node_modules
     ports:
       - "5000:5000"
     depends_on:
       - mongo
-    environment:
-      - NODE_ENV=development
-      - MONGO_URI=mongodb://mongo:27017/proshop
-      - JWT_SECRET='abc123'
+    env_file: ./backend/.env
+    # environment:
+    #   - NODE_ENV=development
+    #   - MONGO_URI=mongodb://mongo:27017/proshop
+    #   - JWT_SECRET='abc123'
     networks:
       - app-network
   mongo:
