@@ -1,4 +1,4 @@
-# ProShop eCommerce Platform
+# ProShop eCommerce Platform with docker deployment
 
 > eCommerce platform built with the MERN stack & Redux.
 
@@ -22,9 +22,6 @@ This is the course project for my [MERN eCommerce From Scratch](https://www.udem
 - PayPal / credit card integration
 - Database seeder (products & users)
 
-## Note on Issues
-Please do not post issues here that are related to your own code when taking the course. Add those in the Udemy Q/A. If you clone THIS repo and there are issues, then you can submit
-
 ## Usage
 
 ### ES Modules in Node
@@ -37,7 +34,7 @@ You can also install and setup Babel if you would like
 
 ### Env Variables
 
-Create a .env file in then root and add the following
+Create a .env file in backend folder and add the following
 
 ```
 NODE_ENV = development
@@ -47,6 +44,23 @@ JWT_SECRET = 'abc123'
 PAYPAL_CLIENT_ID = your paypal client id
 ```
 
+##Instalation
+
+###(Easy Method)
+### I have made this project installation simple
+####Just install docker in your machine and you are googd to go.(If you are using windows I suggest you should use wsl2)
+
+```
+sudo apt-get install make
+docker-compose up
+
+```
+
+With this two commands your Project will be installed on your machine and it will start
+
+
+
+###(Hard Method)
 ### Install Dependencies (frontend & backend)
 
 ```
@@ -65,27 +79,9 @@ npm run dev
 npm run server
 ```
 
-## Build & Deploy
+### Deploy
+With Easy installation method you can deploy the docker container on your VPS easly.
 
-```
-# Create frontend prod build
-cd frontend
-npm run build
-```
-
-There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku
-
-### Seed Database
-
-You can use the following commands to seed the database with some sample users and products as well as destroy all data
-
-```
-# Import data
-npm run data:import
-
-# Destroy data
-npm run data:destroy
-```
 
 ```
 Sample User Logins
@@ -100,6 +96,8 @@ jane@example.com (Customer)
 123456
 ```
 
+### Main Repo
+https://github.com/bradtraversy/proshop_mern
 
 ## License
 
