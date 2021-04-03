@@ -44,11 +44,11 @@ JWT_SECRET = 'abc123'
 PAYPAL_CLIENT_ID = your paypal client id
 ```
 
-##Instalation
+### Installation
 
 (Easy Method)
 ### I have made this project installation simple
-Just install docker in your machine and you are googd to go.(If you are using windows I suggest you should use wsl2)
+#### Just install docker in your machine and you are googd to go.(If you are using windows I suggest you should use wsl2)
 
 ```
 sudo apt-get install make
@@ -59,7 +59,7 @@ With this two commands your Project will be installed on your machine and it wil
 
 
 
-(Hard Method)
+#### (Hard Method)
 ### Install Dependencies (frontend & backend)
 
 ```
